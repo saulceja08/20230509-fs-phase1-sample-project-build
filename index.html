@@ -16,16 +16,27 @@
             <input type ="text" placeholder = "Search for card details">
         </form>
         <img src ="" alt="banner image">
-        <nav>
+        <nav>sdc
             <ul>
-                <li> class="link">text1</li>
-                <li> class="link">text2</li>
-                <li> class="link">text3</li>
-                <li> class="link">text4</li>
-                <li> class="link">text5</li>
+                <li class="monster-cards">text1</li>
+                <li class="spell-cards">text2</li>
+                <li class="trap-cards">text3</li>
+                <li class="link">text4</li>
+                <li class="link">text5</li>
             </ul>
         </nav>
-
+        <div class = "tabContainer">
+            <div class = "buttonContainer">
+                <button onclick="showPanel(0,'#f44336')">All Cards</button>
+                <button onclick="showPanel(1,'#4caf50')">Monster Cards</button>
+                <button onclick="showPanel(2,'#2196f3')">Spell Cards</button>
+                <button onclick="showPanel(3,'#ff5722')">Trap Cards</button>
+            </div>
+        </div>
+        <div class="tabPanel">Tab 1: Content</div>
+        <div class="tabPanel">Tab 2: Content</div>
+        <div class="tabPanel">Tab 3: Content</div>
+        <div class="tabPanel">Tab 4: Content</div>
     </header>
     <main>
         <div id = "card-container"></div>
