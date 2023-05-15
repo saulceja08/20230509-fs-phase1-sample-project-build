@@ -11,14 +11,17 @@ function renderCards(jsonData) {
   //Iterate through each card and retrieve the image list affiliated with each card
   jsonData.forEach(singleCardImgList => {
     const imageList = singleCardImgList.card_images;
+    const marketPrice = singleCardImgList.card_prices
     //Iterate through each image and append it to the card-container
     imageList.forEach(displayImage => {
       //create img element and set the source to the image URL
       const img = document.createElement("img");
+      const cardMarketPrice = marketPrice.length > 0 ? marketPrice[0].cardmarket_price : "N/A";
       img.src = displayImage.image_url;
       cardContainer.appendChild(img);
 
       //Create display box for card details
+      console.log(singleCardImgList)
       const displayBox = document.createElement("div");
       displayBox.classList.add("display-box");
       displayBox.style.display = "none"; // Hide initially
@@ -26,7 +29,7 @@ function renderCards(jsonData) {
         <button class="close-button">x</button>
         <p>Name: ${singleCardImgList.name}</p>
         <p>Type: ${singleCardImgList.type}</p>
-        <p>Price: ${singleCardImgList.price}</p>
+        <p>Price: ${cardMarketPrice}</p>
       `;
       cardContainer.appendChild(displayBox);
 
