@@ -1,23 +1,43 @@
-//Make sure script is running
-console.log("Running scripts")
+console.log("Script is Running");
 
-const fetchData = () => {
-  fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+//fetch => make an http request, retrieve all data, and return as JSON
+fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php')
   .then(response => response.json())
-  .then(dataFetched => renderImages(dataFetched))
+  .then(info => renderCards(info.data));
+
+function renderCards(jsonData) {
+  //access container image
+  const cardContainer = document.getElementById("card-container");
+  //Iterate through each card and retrieve the image list affiliated with each card
+  jsonData.forEach(singleCardImgList => {
+    const imageList = singleCardImgList.card_images;
+    //Iterate through each image and append it to the card-container
+    imageList.forEach(displayImage => {
+      //create img element and set the source to the image URL
+      const img = document.createElement("img");
+      img.src = displayImage.image_url;
+      cardContainer.appendChild(img);
+
+      //Create display box for card details
+      const displayBox = document.createElement("div");
+      displayBox.classList.add("display-box");
+      displayBox.style.display = "none"; // Hide initiallyS
+      displayBox.innerHTML = `
+        <p>Name: ${singleCardImgList.name}</p>
+        <p>Type: ${singleCardImgList.type}</p>
+        <p>Price: ${singleCardImgList.price}</p>
+      `;
+      cardContainer.appendChild(displayBox);
+
+      //Add click event listener to each image
+      img.addEventListener("click", () => {
+        // Toggle display box visibility
+        if (displayBox.style.display === "none") {
+          displayBox.style.display = "block";
+        } else {
+          displayBox.style.display = "none";
+        }
+      });
+    });
+  });
 }
-
-function renderImages(dataFetched){
-  const imgContainer = document.getElementById('card-container')
-
-  dataFetched.data.forEach(imageArray => {
-    imageArray.card_images.forEach(imageSelector => {
-      const imgTag = document.createElement("img")
-
-      imgTag.src = imageSelector.image_url
-      imgContainer.appendChild(imgTag)
-    })
-  })
-}
-  
-fetchData()
