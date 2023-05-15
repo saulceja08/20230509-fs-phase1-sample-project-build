@@ -21,8 +21,9 @@ function renderCards(jsonData) {
       //Create display box for card details
       const displayBox = document.createElement("div");
       displayBox.classList.add("display-box");
-      displayBox.style.display = "none"; // Hide initiallyS
+      displayBox.style.display = "none"; // Hide initially
       displayBox.innerHTML = `
+        <button class="close-button">x</button>
         <p>Name: ${singleCardImgList.name}</p>
         <p>Type: ${singleCardImgList.type}</p>
         <p>Price: ${singleCardImgList.price}</p>
@@ -37,6 +38,12 @@ function renderCards(jsonData) {
         } else {
           displayBox.style.display = "none";
         }
+      });
+
+      //Add click event listener to close button
+      const closeButton = displayBox.querySelector(".close-button");
+      closeButton.addEventListener("click", () => {
+        displayBox.style.display = "none";
       });
     });
   });
