@@ -67,8 +67,4 @@ nav li {
   margin: 10px 0;
 }
 
-.zoomed {
-  transform: scale(1.2); /* Increase the size by 20% (adjust as desired) */
-  transition: transform 0.2s; /* Add a smooth transition effect */
-}
 
