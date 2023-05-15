@@ -26,7 +26,7 @@ function renderCards(jsonData) {
       displayBox.classList.add("display-box");
       displayBox.style.display = "none"; // Hide initially
       displayBox.innerHTML = `
-        <button class="close-button">x</button>
+        <button class="close-button">❌</button>
         <p>Name: ${singleCardImgList.name}</p>
         <p>Type: ${singleCardImgList.type}</p>
         <p>Price: ${cardMarketPrice}</p>

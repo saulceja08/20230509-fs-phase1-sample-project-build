@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: blue;
+  background-color: #2f4f4f;
   padding: 20px;
 }
 
@@ -65,5 +65,10 @@ nav li {
 
 .display-box p {
   margin: 10px 0;
+}
+
+.zoomed {
+  transform: scale(1.2); /* Increase the size by 20% (adjust as desired) */
+  transition: transform 0.2s; /* Add a smooth transition effect */
 }
 
