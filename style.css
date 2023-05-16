@@ -5,9 +5,12 @@ body {
   background-attachment: fixed; /* Fix the background while scrolling */
   background-size: 8%;
 }
-
 header {
-  background-color: #2f4f4f;
+  background-color: black;
+  background-image: url("header-background.JPG"); /* Path to your logo image */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80% auto;
   padding: 20px;
 }
 
