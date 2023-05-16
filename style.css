@@ -8,9 +8,9 @@ body {
 header {
   background-color: black;
   background-image: url("header-background.JPG"); /* Path to your logo image */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: 80% auto;
+  background-size: 70% auto;
   padding: 20px;
 }
 
