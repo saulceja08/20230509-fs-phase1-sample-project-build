@@ -19,11 +19,11 @@
         <img src="" alt="banner image">
         <nav>
             <ul>
-                <li class="link">text1</li>
-                <li class="link">text2</li>
-                <li class="link">text3</li>
-                <li class="link">text4</li>
-                <li class="link">text5</li>
+                <li class="link" id="all-cards-link">All Cards</li>
+                <li class="link" id="monster-cards-link">Monster Cards</li>
+                <li class="link" id="spell-cards-link">Spell Cards</li>
+                <li class="link" id="trap-cards-link">Trap Cards</li>
+                <li class="link" id="feedback-link">Leave Feedback</li>
             </ul>
         </nav>
     </header>
@@ -34,6 +34,15 @@
         <p id="card-name"></p>
         <p id="card-type"></p>
         <p id="card-price"></p>
+    </div>
+    <div id="feedback-form" class="display-box">
+        <h2>Feedback</h2>
+        <form id="feedback-form">
+            <input type="text" id="name-input" placeholder="Name">
+            <input type="email" id="email-input" placeholder="Email">
+            <textarea id="comments-input" placeholder="Comments"></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 </html>
