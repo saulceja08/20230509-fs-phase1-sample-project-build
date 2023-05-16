@@ -11,10 +11,21 @@
 
 <body>
     <header>
-        <img src="search-bar-logo.PNG" alt="search Logo">
-        <form>
-            <input type="text" placeholder="Search for card details">
-        </form>
+        <div class="feedback-form">
+            <h3 class = "header3">Submit Feedback:</h3>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <nav>
             <ul>
                 <li class="link">All Cards</li>
