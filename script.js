@@ -65,3 +65,17 @@ function filterCardsByCategory(jsonData, category) {
     renderCards(filteredData);
   }
 }
+
+function showPopup() {
+  //create a pop-up element when user clicks submit
+  const popup = document.createElement("div")
+  popup.className = "popup"
+  popup.innerHTML = "Thank You! Your feedback was submitted!"
+
+  document.body.appendChild(popup);
+
+  setTimeout(function() {
+    popup.remove()
+
+  },2000)
+}
