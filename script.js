@@ -78,4 +78,6 @@ function showPopup() {
     popup.remove()
 
   },2000)
+
+  document.getElementById("contact-form").reset()
 }
