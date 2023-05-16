@@ -1,11 +1,29 @@
 console.log("Script is Running");
 
-fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-  .then(response => response.json())
-  .then(info => renderCards(info.data));
+let cardContainer; // Define the cardContainer variable
+
+document.addEventListener("DOMContentLoaded", () => {
+  cardContainer = document.getElementById("card-container"); // Assign the element inside the event listener
+  const linkItems = document.querySelectorAll(".link");
+
+  fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    .then(response => response.json())
+    .then(info => {
+      const jsonData = info.data;
+      renderCards(jsonData);
+
+      // Add click event listeners to link items
+      linkItems.forEach(item => {
+        item.addEventListener("click", () => {
+          const category = item.textContent.trim();
+          filterCardsByCategory(jsonData, category);
+        });
+      });
+    });
+});
 
 function renderCards(jsonData) {
-  const cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = ""; // Clear the existing card container
 
   jsonData.forEach(singleCardImgList => {
     const imageList = singleCardImgList.card_images;
@@ -35,4 +53,15 @@ function renderCards(jsonData) {
       });
     });
   });
+}
+
+function filterCardsByCategory(jsonData, category) {
+  cardContainer.innerHTML = ""; // Clear the existing card container
+
+  if (category === "All Cards") {
+    renderCards(jsonData);
+  } else {
+    const filteredData = jsonData.filter(card => card.type === category);
+    renderCards(filteredData);
+  }
 }
