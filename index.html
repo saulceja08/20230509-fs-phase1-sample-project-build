@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Yu-Gi-Oh! Card Details</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yu-Gi-Oh! Card Details</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="feedback-form">
-            <h3 class = "header3">Submit Feedback:</h3>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="comment">Comment:</label>
-                <textarea id="comment" name="comment" required></textarea>
-                <br>
-                <button type="submit" onclick="showPopup(); return false">Submit</button>
-            </form>
-        </div>
-        <nav>
-            <ul>
-                <li class="link">All Cards</li>
-                <li class="link">Monster Cards</li>
-                <li class="link">Spell Cards</li>
-                <li class="link">Trap Cards</li>
-                <li class="link">Feedback form</li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div id="card-container"></div>
-    </main>
-    <div id="card-details" class="display-box">
-        <p id="card-name"></p>
-        <p id="card-type"></p>
-        <p id="card-price"></p>
+  <header>
+    <div class="feedback-form">
+      <h3 class="header3">Submit Feedback:</h3>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea><br>
+        <button type="submit" onclick="showPopup(); return false;">Submit</button>
+      </form>
     </div>
+    <nav>
+      <ul>
+        <li class="link">All Cards</li>
+        <li class="link">Monster Cards</li>
+        <li class="link">Spell Cards</li>
+        <li class="link">Trap Cards</li>
+        <li class="link">Feedback Form</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="card-container"></div>
+  </main>
+  <div id="card-details" class="display-box">
+    <p id="card-name"></p>
+    <p id="card-type"></p>
+    <p id="card-price"></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
