@@ -1,19 +1,16 @@
 body {
-  background-color: rgba(0, 0, 0, 0.8);
-  background-image: url("back-ground.jpg");
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with 80% opacity */
+  background-image: url("back-ground.jpg"); /* Path to your logo image */
+  background-repeat: repeat; /* Repeat the logo image */
+  background-attachment: fixed; /* Fix the background while scrolling */
   background-size: 8%;
 }
+
 header {
-  background-color: #2F4F4F;
+  background-color: #2f4f4f;
   padding: 20px;
 }
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 header img {
   width: 100px;
   height: auto;
@@ -33,17 +30,11 @@ nav ul {
 nav li {
   display: inline-block;
   margin-right: 10px;
-}
-.link {
   color: white;
-  background-color: #2F4F4F;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 #card-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;S
   justify-content: center;
   max-width: 800px;
   margin: 0 auto;
